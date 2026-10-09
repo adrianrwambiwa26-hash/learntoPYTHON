@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyVerse: Master Python Your Way</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-mono { font-family: 'Fira Code', monospace; }
+    .font-fantasy { font-family: 'Cinzel', serif; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+
+  <!-- Navigation Bar -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center font-mono font-bold text-slate-950 text-lg">
+          &gt;_
+        </div>
+        <span class="font-bold text-xl tracking-tight text-white">Py<span class="text-emerald-400">Verse</span></span>
+      </div>
+      <div class="text-xs sm:text-sm text-slate-400">
+        5 Multi-Modal Learning Pathways
+      </div>
+    </div>
+  </header>
+
+  <!-- Pathway Selector Tabs -->
+  <div class="bg-slate-900/50 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex gap-2 overflow-x-auto">
+      <button onclick="switchMode('adventure')" id="btn-adventure" class="nav-tab px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap bg-emerald-500 text-slate-950">
+        ⚔️ 1. Quest Engine (Lore RPG)
+      </button>
+      <button onclick="switchMode('quiz')" id="btn-quiz" class="nav-tab px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap bg-slate-800 text-slate-300 hover:bg-slate-700">
+        🧠 2. Quickfire Quiz (MCQ)
+      </button>
+      <button onclick="switchMode('sandbox')" id="btn-sandbox" class="nav-tab px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap bg-slate-800 text-slate-300 hover:bg-slate-700">
+        ⚡ 3. Live Sandbox (Scratchpad)
+      </button>
+      <button onclick="switchMode('recipes')" id="btn-recipes" class="nav-tab px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap bg-slate-800 text-slate-300 hover:bg-slate-700">
+        🛠️ 4. Practical Blueprints (Real-World)
+      </button>
+      <button onclick="switchMode('doctor')" id="btn-doctor" class="nav-tab px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap bg-slate-800 text-slate-300 hover:bg-slate-700">
+        🩺 5. Code Doctor (Bug Lab)
+      </button>
+    </div>
+  </div>
+
+  <!-- Content Modules -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full">
+
+    <!-- 1. ADVENTURE LORE ENGINE -->
+    <section id="module-adventure" class="grid lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-2xl p-6 relative overflow-hidden">
+        <div class="text-xs uppercase tracking-widest text-emerald-400 font-semibold mb-2">Chapter 1: The Gates of Pyroth</div>
+        <h2 class="text-2xl font-fantasy font-bold text-amber-200 mb-4" id="quest-title">The Sealed Runestone</h2>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6" id="quest-narrative">
+          You stand before a colossal gate carved from black stone. An enchanted runestone pulses faintly. An inscription reads: <em>"Declare the magical frequency of flame to unlock this gate."</em>
+        </p>
+
+        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 font-mono text-sm mb-4">
+          <div class="text-slate-500 mb-2">// Objective: Initialize a variable named 'mana' with a value of 100.</div>
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-400">&gt;&gt;&gt;</span>
+            <input type="text" id="quest-input" placeholder="mana = 100" class="bg-transparent border-none outline-none text-white w-full">
+          </div>
+        </div>
+
+        <button onclick="checkQuest()" class="px-6 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-lg text-sm transition">
+          Invoke Spell
+        </button>
+
+        <div id="quest-feedback" class="mt-4 p-3 rounded-lg text-xs font-mono hidden"></div>
+      </div>
+
+      <div class="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <h3 class="font-semibold text-white mb-2 flex items-center gap-2">
+          <span>📜</span> Adventurer's Codex
+        </h3>
+        <p class="text-xs text-slate-400 mb-4">Why this matters in practical development:</p>
+        <div class="space-y-3 text-sm text-slate-300">
+          <div class="bg-slate-950/60 p-3 rounded-lg border border-slate-800/80">
+            <strong class="text-emerald-400 block mb-1">Variables & Assignment:</strong>
+            Variables store values in your computer's memory. Instead of re-typing numbers or strings, you assign them to names using <code class="text-amber-300">=</code>.
+          </div>
+          <div class="bg-slate-950/60 p-3 rounded-lg border border-slate-800/80">
+            <strong class="text-emerald-400 block mb-1">Production Use:</strong>
+            Storing user sessions, pricing tokens, configuration URLs, and API endpoints.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. QUICKFIRE MULTIPLE CHOICE -->
+    <section id="module-quiz" class="hidden max-w-3xl mx-auto space-y-6">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="flex justify-between items-center mb-4">
+          <span class="text-xs font-mono uppercase bg-slate-800 text-slate-400 px-2 py-1 rounded">Question 1 of 3</span>
+          <span class="text-xs font-mono text-emerald-400" id="quiz-score">Score: 0</span>
+        </div>
+        <h3 class="text-lg font-semibold text-white mb-4" id="quiz-question">
+          What will the following code output?
+        </h3>
+        <pre class="bg-slate-950 p-4 rounded-xl text-emerald-400 font-mono text-sm mb-6 border border-slate-800">
+items = ["apple", "banana", "cherry"]
+print(items[-1])</pre>
+        <div class="grid gap-3" id="quiz-options">
+          <!-- Populated by JS -->
+        </div>
+        <div id="quiz-explanation" class="mt-4 p-4 rounded-xl text-sm hidden font-mono"></div>
+      </div>
+    </section>
+
+    <!-- 3. SYNTAX SANDBOX -->
+    <section id="module-sandbox" class="hidden grid lg:grid-cols-2 gap-6">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col">
+        <div class="flex justify-between items-center mb-3">
+          <span class="text-sm font-semibold text-white">Browser Python Sandbox</span>
+          <span class="text-xs text-slate-500 font-mono">Simulated Runtime</span>
+        </div>
+        <textarea id="sandbox-code" class="w-full flex-1 bg-slate-950 border border-slate-800 rounded-xl p-4 font-mono text-sm text-slate-100 outline-none focus:border-emerald-500 min-h-[260px]" spellcheck="false"># Try typing basic Python statements:
+name = "World"
+counter = 5
+print("Hello, " + name)
+print("Result:", counter * 4)</textarea>
+        <div class="mt-4 flex gap-3">
+          <button onclick="runSandbox()" class="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-lg text-sm transition">
+            ▶ Run Code
+          </button>
+          <button onclick="clearSandbox()" class="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold rounded-lg text-sm transition">
+            Clear
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col">
+        <span class="text-sm font-semibold text-white mb-3">Console Output</span>
+        <div id="sandbox-output" class="w-full flex-1 bg-black rounded-xl p-4 font-mono text-xs text-emerald-400 overflow-y-auto min-h-[260px] whitespace-pre-wrap border border-slate-800">
+Ready for execution...
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. REAL-WORLD RECIPES -->
+    <section id="module-recipes" class="hidden space-y-6">
+      <div class="grid md:grid-cols-3 gap-4">
+        <button onclick="loadRecipe('scraper')" class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-left hover:border-emerald-500 transition">
+          <span class="text-emerald-400 text-xs font-mono font-bold block mb-1">RECIPE 01</span>
+          <h4 class="text-white font-semibold text-sm">Data Extraction (Scraping)</h4>
+          <p class="text-xs text-slate-400 mt-1">Collecting prices & data from websites.</p>
+        </button>
+        <button onclick="loadRecipe('api')" class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-left hover:border-emerald-500 transition">
+          <span class="text-emerald-400 text-xs font-mono font-bold block mb-1">RECIPE 02</span>
+          <h4 class="text-white font-semibold text-sm">API Consumer</h4>
+          <p class="text-xs text-slate-400 mt-1">Calling REST endpoints and parsing JSON.</p>
+        </button>
+        <button onclick="loadRecipe('automation')" class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-left hover:border-emerald-500 transition">
+          <span class="text-emerald-400 text-xs font-mono font-bold block mb-1">RECIPE 03</span>
+          <h4 class="text-white font-semibold text-sm">File Renaming Automation</h4>
+          <p class="text-xs text-slate-400 mt-1">Cleaning folders and bulk sorting.</p>
+        </button>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <h3 class="text-lg font-bold text-white mb-2" id="recipe-title">Web Scraping</h3>
+        <p class="text-sm text-slate-400 mb-4" id="recipe-desc">How software automatically extracts unstructured web data.</p>
+        <pre class="bg-slate-950 p-4 rounded-xl font-mono text-sm text-amber-300 border border-slate-800 overflow-x-auto" id="recipe-code"></pre>
+      </div>
+    </section>
+
+    <!-- 5. CODE DOCTOR -->
+    <section id="module-doctor" class="hidden grid lg:grid-cols-2 gap-6">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-mono uppercase bg-red-950 text-red-400 px-2 py-1 rounded border border-red-800/40">Critical Defect</span>
+          <span class="text-xs text-slate-400 font-mono">Case #402</span>
+        </div>
+        <h3 class="text-base font-bold text-white mb-2">Fix the Broken Discount Calculator</h3>
+        <p class="text-xs text-slate-400 mb-4">The customer isn't getting discounts due to indentation and comparison bugs. Make this code run correctly.</p>
+
+        <textarea id="doctor-code" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 font-mono text-sm text-slate-100 outline-none focus:border-emerald-500 h-48" spellcheck="false">total = 120
+
+if total > 100:
+discount = 20
+total = total - discount
+
+print(total)</textarea>
+        
+        <button onclick="diagnoseCode()" class="mt-4 px-5 py-2.5 bg-red-500 hover:bg-red-400 text-slate-950 font-bold rounded-lg text-sm transition">
+          Run Diagnostics
+        </button>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col">
+        <span class="text-sm font-semibold text-white mb-2">Diagnostic Feedback</span>
+        <div id="doctor-output" class="flex-1 bg-slate-950 rounded-xl p-4 font-mono text-xs border border-slate-800 text-slate-400">
+Press "Run Diagnostics" to scan for syntax errors and logic traps.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Application Logic -->
+  <script>
+    // Tab Switching
+    function switchMode(modeId) {
+      ['adventure', 'quiz', 'sandbox', 'recipes', 'doctor'].forEach(id => {
+        document.getElementById(`module-${id}`).classList.add('hidden');
+        document.getElementById(`btn-${id}`).className = 'nav-tab px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap bg-slate-800 text-slate-300 hover:bg-slate-700';
+      });
+      document.getElementById(`module-${modeId}`).classList.remove('hidden');
+      document.getElementById(`btn-${modeId}`).className = 'nav-tab px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap bg-emerald-500 text-slate-950';
+    }
+
+    // 1. Quest Logic
+    let questStage = 0;
+    const quests = [
+      {
+        title: "The Sealed Runestone",
+        narrative: "You stand before a colossal gate carved from black stone. The inscription reads: 'Declare the magical frequency of flame to unlock this gate.'",
+        hint: "Initialize a variable named 'mana' with a value of 100.",
+        targetRegex: /^\s*mana\s*=\s*100\s*$/,
+        success: "The gate hums with ethereal energy and slowly grinds open!"
+      },
+      {
+        title: "The Sleeping Golem",
+        narrative: "A guardian stands dormant. You must check if your mana is greater than 50 before attempting to pass.",
+        hint: "Write an if check: if mana > 50:",
+        targetRegex: /^\s*if\s+mana\s*>\s*50\s*:\s*$/,
+        success: "The spell resonates! You step lightly past the ancient construct."
+      }
+    ];
+
+    function checkQuest() {
+      const input = document.getElementById('quest-input').value;
+      const feedback = document.getElementById('quest-feedback');
+      const q = quests[questStage];
+
+      if (q.targetRegex.test(input)) {
+        feedback.className = "mt-4 p-3 rounded-lg text-xs font-mono bg-emerald-950 text-emerald-300 border border-emerald-800 block";
+        feedback.innerText = "✨ " + q.success;
+        if (questStage < quests.length - 1) {
+          questStage++;
+          setTimeout(() => {
+            document.getElementById('quest-title').innerText = quests[questStage].title;
+            document.getElementById('quest-narrative').innerText = quests[questStage].narrative;
+            document.getElementById('quest-input').value = "";
+            document.getElementById('quest-input').placeholder = "Enter code here";
+            feedback.classList.add('hidden');
+          }, 1800);
+        }
+      } else {
+        feedback.className = "mt-4 p-3 rounded-lg text-xs font-mono bg-red-950 text-red-300 border border-red-800 block";
+        feedback.innerText = "❌ The rune rejects your incantation. Requirement: " + q.hint;
+      }
+    }
+
+    // 2. Quiz Logic
+    const quizData = [
+      {
+        question: "What will the following code output?",
+        code: `items = ["apple", "banana", "cherry"]\nprint(items[-1])`,
+        options: ["apple", "banana", "cherry", "IndexError"],
+        correct: 2,
+        explanation: "In Python, negative indexing begins from the right. index -1 returns the final element ('cherry')."
+      }
+    ];
+
+    function renderQuiz() {
+      const q = quizData[0];
+      const container = document.getElementById('quiz-options');
+      container.innerHTML = '';
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = "w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-950 hover:border-emerald-500 font-mono text-sm transition text-slate-200";
+        btn.innerText = `${String.fromCharCode(65 + idx)}. ${opt}`;
+        btn.onclick = () => handleQuizAnswer(idx, q.correct, q.explanation);
+        container.appendChild(btn);
+      });
+    }
+
+    function handleQuizAnswer(selected, correct, exp) {
+      const expDiv = document.getElementById('quiz-explanation');
+      expDiv.classList.remove('hidden');
+      if (selected === correct) {
+        expDiv.className = "mt-4 p-4 rounded-xl text-sm font-mono bg-emerald-950 text-emerald-300 border border-emerald-800";
+        expDiv.innerText = "✅ Correct! " + exp;
+        document.getElementById('quiz-score').innerText = "Score: 100";
+      } else {
+        expDiv.className = "mt-4 p-4 rounded-xl text-sm font-mono bg-red-950 text-red-300 border border-red-800";
+        expDiv.innerText = "❌ Incorrect. " + exp;
+      }
+    }
+
+    // 3. Mini-Interpreter Simulator for Sandbox
+    function runSandbox() {
+      const code = document.getElementById('sandbox-code').value;
+      const output = document.getElementById('sandbox-output');
+      const lines = code.split('\n');
+      let stdout = "";
+      let env = {};
+
+      try {
+        for (let line of lines) {
+          line = line.trim();
+          if (!line || line.startsWith('#')) continue;
+
+          // Simple assignment
+          if (line.includes('=') && !line.includes('==')) {
+            const [k, v] = line.split('=').map(s => s.trim());
+            env[k] = eval(v); // evaluate primitive inputs
+          }
+          // Simple print parsing
+          else if (line.startsWith('print(') && line.endsWith(')')) {
+            const inner = line.substring(6, line.length - 1);
+            // Replace references
+            let evaluated = inner.split(',').map(part => {
+              part = part.trim();
+              if (env.hasOwnProperty(part)) return env[part];
+              try { return eval(part); } catch { return part; }
+            }).join(' ');
+            stdout += evaluated + "\n";
+          }
+        }
+        output.innerText = stdout || "Code completed with no console output.";
+      } catch (err) {
+        output.innerText = "Runtime Error: " + err.message;
+      }
+    }
+
+    function clearSandbox() {
+      document.getElementById('sandbox-output').innerText = "Ready for execution...";
+    }
+
+    // 4. Practical Recipes
+    const recipes = {
+      scraper: {
+        title: "Automated Web Data Extraction",
+        desc: "Using the requests and BeautifulSoup packages to extract real-time web prices.",
+        code: `import requests\nfrom bs4 import BeautifulSoup\n\nurl = "https://example.com/products"\nresponse = requests.get(url)\nsoup = BeautifulSoup(response.text, "html.parser")\n\nfor item in soup.find_all("div", class_="product-card"):\n    title = item.find("h2").text\n    price = item.find("span", class_="price").text\n    print(f"Product: {title} | Cost: {price}")`
+      },
+      api: {
+        title: "Consuming REST APIs",
+        desc: "Connecting to remote servers, fetching JSON payloads, and unpacking properties.",
+        code: `import requests\n\nendpoint = "https://api.github.com/users/octocat"\nres = requests.get(endpoint)\n\nif res.status_code == 200:\n    profile = res.json()\n    print(f"Developer: {profile['name']}")\n    print(f"Public Repos: {profile['public_repos']}")`
+      },
+      automation: {
+        title: "Bulk File Organization",
+        desc: "Automating manual operating system tasks by renaming and moving files based on extensions.",
+        code: `import os\nimport shutil\n\nfolder = "/path/to/downloads"\nfor filename in os.listdir(folder):\n    if filename.endswith(".pdf"):\n        dest = os.path.join(folder, "Documents")\n        shutil.move(os.path.join(folder, filename), dest)\n        print(f"Relocated {filename} to /Documents")`
+      }
+    };
+
+    function loadRecipe(key) {
+      const r = recipes[key];
+      document.getElementById('recipe-title').innerText = r.title;
+      document.getElementById('recipe-desc').innerText = r.desc;
+      document.getElementById('recipe-code').innerText = r.code;
+    }
+
+    // 5. Code Doctor
+    function diagnoseCode() {
+      const code = document.getElementById('doctor-code').value;
+      const out = document.getElementById('doctor-output');
+      
+      // Look for indented body under if
+      const lines = code.split('\n');
+      let hasIndentedBlock = false;
+      let hasIf = false;
+
+      for (let i = 0; i < lines.length; i++) {
+        if (lines[i].trim().startsWith('if total > 100:')) {
+          hasIf = true;
+          if (lines[i+1] && (lines[i+1].startsWith('    ') || lines[i+1].startsWith('\t'))) {
+            hasIndentedBlock = true;
+          }
+        }
+      }
+
+      if (hasIf && hasIndentedBlock) {
+        out.innerHTML = `<span class="text-emerald-400 font-bold">✔ Indentation fixed!</span>\n\nAll Python flow-control blocks require an indented suite (typically 4 spaces). Your code now evaluates and runs safely.`;
+      } else {
+        out.innerHTML = `<span class="text-red-400 font-bold">✖ IndentationError Detected</span>\n\nNotice that the line below your 'if' statement was not indented. Unlike C++ or JavaScript which use curly braces {}, Python relies strictly on indentation to know which lines belong inside a condition or loop.`;
+      }
+    }
+
+    // Initialize defaults
+    renderQuiz();
+    loadRecipe('scraper');
+  </script>
+</body>
+</html>
